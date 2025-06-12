@@ -1,17 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import Logo from './assets/logo.png'; // Assuming logo.png is in the same directory
+import './index.css'; // Assuming index.css is in the same directory
+const Header = () => {
+    return (
+        <div className='header'>
+            <div className='logo-container'>
+                <img className='logo' src={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFNcm7viysIhRVGQ5gfIFX-ry2E6lvRLco7A&s`} alt='Logo' />
+            </div>
+            {/* Navigation */}
+            <div className='nav-items'>
+                <nav className='nav'>
+                    <ul>
+                        <li>About us</li>
+                        <li>Contact us</li>
+                        <li>Cart</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    );
+}
 
-const parent = React.createElement('div', { id: 'parent', key: 'parent' },
-    React.createElement('div', { id: 'child', key: 'child' },
-        [
-            React.createElement('h1', { id: 'h1-element', key: 'h1ele' }, 'Hello, world! using H1'),
-            React.createElement('h2', { id: 'h2-element', key: 'h2ele' }, 'Hello, world! using H2'),
-            React.createElement('p', { id: 'p-element', key: 'pele' }, 'This is a paragraph element.')
-        ]
-    )
-);
+const Appcomponent = () => {
+    return (
+        <div className='app'>
+            {/* Header */}
+            <Header />
+            {/* body */}
+        </div>
+    );
+};
 
-console.log(parent);
-
-const root = ReactDOM.createRoot(document.getElementById('abcd'));
-root.render(parent);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+    <>
+        <Appcomponent />
+    </>
+)
